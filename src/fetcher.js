@@ -13,7 +13,7 @@ export const getPopularMovies = async () => {
       "https://api.themoviedb.org/3/trending/movie/week?api_key=eae120b2b421dd7480174a3dbda3bb89"
     );
     console.log("Success in: " + getPopularMovies.name);
-    return response;
+    return response.data.results;
   } catch (error) {
     console.log("Error in:" + getPopularMovies.name + "\n" + error);
   }
