@@ -15,7 +15,7 @@ export const getPopularMovies = async () => {
       `https://api.themoviedb.org/3/trending/movie/week?api_key=${keyAPI}`
     );
     console.log("Success in: " + getPopularMovies.name);
-    return response.data.results;
+    return response.data;
   } catch (error) {
     console.log("Error in:" + getPopularMovies.name + "\n" + error);
   }
@@ -25,10 +25,10 @@ export const getPopularMovies = async () => {
 export const getMoviesByKeyword = async (keyword, year) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/search/movie?query=${keyword}&api_key=${keyAPI}`
+      `https://api.themoviedb.org/3/search/movie?api_key=${keyAPI}&query=${keyword}&year=${year}`
     );
     console.log("Success in: " + getMoviesByKeyword.name);
-    return response.data.results;
+    return response.data;
   } catch (error) {
     console.log("Error in:" + getMoviesByKeyword.name + "\n" + error);
   }

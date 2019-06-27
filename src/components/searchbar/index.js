@@ -9,14 +9,21 @@ export default class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      keyword: ""
+      keyword: " ",
+      year: 0
     };
   }
 
-  onChangeHandler = async e => {
-    console.log(this.state.keyword);
-    this.props.searchMovies(e.target.value);
+  onChangeHandlerKeyword = async e => {
+    console.log(e.target.value);
+    this.props.searchMovies(e.target.value, this.state.year);
     this.setState({ keyword: e.target.value });
+  };
+
+  onChangeHandlerYear = async e => {
+    console.log(e.target.value);
+    this.props.searchMovies(this.state.keyword, e.target.value);
+    this.setState({ year: e.target.value });
   };
 
   render() {
@@ -25,8 +32,14 @@ export default class SearchBar extends React.Component {
         <input
           type="text"
           value={this.state.keyword}
-          onChange={e => this.onChangeHandler(e)}
+          onChange={e => this.onChangeHandlerKeyword(e)}
           placeholder="Search for movies"
+        />
+        <input
+          type="number"
+          value={this.state.year}
+          onChange={e => this.onChangeHandlerYear(e)}
+          placeholder="Search by year"
         />
       </div>
     );

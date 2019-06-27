@@ -38,21 +38,19 @@ export default class Discover extends React.Component {
 
   // Write a function to preload the popular movies when page loads & get the movie genres
   async componentDidMount() {
-    const results = await fetcher.getPopularMovies();
-    this.setState({ results: results, totalCount: results.length && 1 }); //{ ...this.state.results, results }
+    const data = await fetcher.getPopularMovies();
+    this.setState({ results: data.results, totalCount: data.total_results }); //{ ...this.state.results, results }
     console.log("Discover: ComponentDidMount");
   }
 
   // Write a function to get the movie details based on the movie id taken from the URL.
   async searchMovies(keyword, year) {
     // Write a function to trigger the API request and load the search results based on the keyword and year given as parameters
-    const results = await fetcher.getMoviesByKeyword(keyword, year);
+    const data = await fetcher.getMoviesByKeyword(keyword, year);
     this.setState({
-      results: results,
-      totalCount: results.length,
-      keyword: keyword
+      results: data.results,
+      totalCount: data.total_results
     });
-    console.log("Calling searchMovies");
   }
 
   render() {
@@ -64,6 +62,7 @@ export default class Discover extends React.Component {
       results,
       movieDetails
     } = this.state;
+    //Are you really using as state: year and keyword?
 
     return (
       <DiscoverWrapper>
