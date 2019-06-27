@@ -10,11 +10,9 @@ export default class MovieList extends React.Component {
     return (
       <MoviesWrapper>
         {/* Finish the MovieItem component and use it here to display the movie results */}
-        <ul>
-          {movies.map(m => (
-            <li>{<MovieItem movie={m} />}</li>
-          ))}
-        </ul>
+        {movies.map(m => (
+          <div key={m.title}>{<MovieItem movie={m} />}</div>
+        ))}
       </MoviesWrapper>
     );
   }

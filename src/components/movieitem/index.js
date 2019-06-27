@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 export default class MovieItem extends React.Component {
   render() {
-    const { Movie } = this.props;
+    const Movie = this.props.movie;
     return (
       //The MovieItemWrapper must be linked to the movie details popup
       <MovieItemWrapper>
-        <p>I am a movie</p>
+        <p>{Movie.title}</p>
         <LeftCont />
         <RightCont />
       </MovieItemWrapper>
