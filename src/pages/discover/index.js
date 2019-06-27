@@ -39,8 +39,8 @@ export default class Discover extends React.Component {
   // Write a function to preload the popular movies when page loads & get the movie genres
   async componentDidMount() {
     const results = await fetcher.getPopularMovies();
-    this.setState({ results: results }); //{ ...this.state.results, results }
-    console.log("ComponentDidMount");
+    this.setState({ results: results, totalCount: results.length }); //{ ...this.state.results, results }
+    console.log("Discover: ComponentDidMount");
   }
 
   // Write a function to get the movie details based on the movie id taken from the URL.
@@ -71,7 +71,7 @@ export default class Discover extends React.Component {
           />
         </MovieFilters>
         <MovieResults>
-          {totalCount > 0 && <TotalCounter>{totalCount} results</TotalCounter>}
+          {totalCount > 0 && <TotalCounter>{totalCount} movies </TotalCounter>}
           <MovieList movies={results || []} genres={genreOptions || []} />
           {/* Each movie must have a unique URL and if clicked a pop-up should appear showing the movie details and the action buttons as shown in the wireframe */}
         </MovieResults>
