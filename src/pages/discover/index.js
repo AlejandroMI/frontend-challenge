@@ -47,10 +47,17 @@ export default class Discover extends React.Component {
   async searchMovies(keyword, year) {
     // Write a function to trigger the API request and load the search results based on the keyword and year given as parameters
     const data = await fetcher.getMoviesByKeyword(keyword, year);
-    this.setState({
-      results: data.results,
-      totalCount: data.total_results
-    });
+    if (data != undefined) {
+      this.setState({
+        results: data.results,
+        totalCount: data.total_results
+      });
+    } else {
+      this.setState({
+        results: [],
+        totalCount: 0
+      });
+    }
   }
 
   render() {
