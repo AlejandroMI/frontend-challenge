@@ -60,7 +60,7 @@ const MovieItemTitle = styled.div`
 const MovieItemScore = styled.div`
   display: inline-block;
   background-color: ${colors.primaryColor};
-  border-radius: 15%;
+  border-radius: 3px;
   color: white;
   width: 1.6em;
   height: 1.2em;

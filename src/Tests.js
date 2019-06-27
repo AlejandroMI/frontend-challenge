@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { getPopularMovies } from "./fetcher";
+import * as fetcher from "./fetcher";
 
 class Tests extends Component {
   render() {
-    getPopularMovies();
+    fetcher.getPopularMovies();
     return <p>Testing...</p>;
   }
 }

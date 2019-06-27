@@ -8,11 +8,10 @@ import SearchBar from "../../components/searchbar";
 export default class SearchFilters extends React.Component {
   render() {
     const { genres, ratings, languages, searchMovies } = this.props;
-
     return (
       <FiltersWrapper>
         <SearchFiltersCont className="search_inputs_cont" marginBottom>
-          {/* Implement a SearchBar component and use it for both the keyword and the year inputs */}
+          <SearchBar searchMovies={searchMovies} />
         </SearchFiltersCont>
         <SearchFiltersCont>
           <CategoryTitle>Movies</CategoryTitle>
