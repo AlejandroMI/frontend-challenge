@@ -13,6 +13,7 @@ export default class ExpandableFilters extends React.Component {
     this.onClickHandler = this.onClickHandler.bind(this);
   }
 
+  //Change state of component on click
   onClickHandler() {
     console.log(this.state.filtersShown);
     this.setState(prevState => ({
@@ -26,16 +27,16 @@ export default class ExpandableFilters extends React.Component {
 
     if (filtersShown) {
       return (
-        <ExpandableTitle onClick={this.onClickHandler}>{title}</ExpandableTitle>
-      );
-    } else {
-      return (
         <ExpandableWrapper>
           <ExpandableTitle onClick={this.onClickHandler}>
             {title}
           </ExpandableTitle>
           <p>I am expanded</p>
         </ExpandableWrapper>
+      );
+    } else {
+      return (
+        <ExpandableTitle onClick={this.onClickHandler}>{title}</ExpandableTitle>
       );
     }
   }
