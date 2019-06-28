@@ -18,6 +18,8 @@ export default class SearchFilters extends React.Component {
           {/* Implement a component called "ExpandableFilters" and use it for the filter categories */}
           {/* 3 EF components each of them receiving a different prop */}
           <ExpandableFilters filters={genres} title="Select genre(s)" />
+          <ExpandableFilters filters={ratings} title="Select min. vote" />
+          <ExpandableFilters filters={languages} title="Select language" />
         </SearchFiltersCont>
       </FiltersWrapper>
     );
@@ -41,4 +43,7 @@ const SearchFiltersCont = styled.div`
     `}
 `;
 
-const CategoryTitle = styled.div``;
+const CategoryTitle = styled.div`
+  margin-bottom: 15px;
+  font-weight: bold;
+`;

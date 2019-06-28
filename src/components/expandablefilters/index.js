@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-
+import Plus from "../../images/plus-symbol.svg";
+import Minus from "../../images/minus-symbol.svg";
 import Checkbox from "../../components/checkbox";
 
 export default class ExpandableFilters extends React.Component {
@@ -26,17 +27,29 @@ export default class ExpandableFilters extends React.Component {
     const { filtersShown } = this.state;
 
     if (filtersShown) {
+      //We return our filters chechbox
       return (
         <ExpandableWrapper>
-          <ExpandableTitle onClick={this.onClickHandler}>
-            {title}
-          </ExpandableTitle>
-          <p>I am expanded</p>
+          <ExpandableSubWrapper onClick={this.onClickHandler}>
+            <ExpandableIcon src={Minus} alt="Contract" />
+            <ExpandableTitle>{title}</ExpandableTitle>
+          </ExpandableSubWrapper>
+          <ExpandableSubWrapper>
+            {filters.map(f => (
+              <div key={f.id}>{<Checkbox filter={f} />}</div>
+            ))}
+          </ExpandableSubWrapper>
         </ExpandableWrapper>
       );
     } else {
+      //Just show our title
       return (
-        <ExpandableTitle onClick={this.onClickHandler}>{title}</ExpandableTitle>
+        <ExpandableWrapper>
+          <ExpandableSubWrapper onClick={this.onClickHandler}>
+            <ExpandableIcon src={Plus} alt="Expand" />
+            <ExpandableTitle>{title}</ExpandableTitle>
+          </ExpandableSubWrapper>
+        </ExpandableWrapper>
       );
     }
   }
@@ -44,8 +57,26 @@ export default class ExpandableFilters extends React.Component {
 
 const ExpandableWrapper = styled.div`
   position: relative;
+  cursor: pointer;
+`;
+
+const ExpandableSubWrapper = styled.div`
+  position: relative;
+  padding: 5px;
+`;
+
+const ExpandableIcon = styled.img`
+  display: inline-block;
+  width: 1em;
+  position: relative;
+  margin-bottom: 0.3em;
+  vertical-align: middle;
 `;
 
 const ExpandableTitle = styled.div`
+  display: inline-block;
   font-size: 1em;
+  margin-left: 15px;
 `;
+
+const ExpandableList = styled.div``;

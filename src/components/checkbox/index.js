@@ -5,9 +5,10 @@ export default class CheckBox extends React.Component {
   // Create a custom checkbox component
 
   render() {
+    const filter = this.props.filter;
     return (
       <CheckboxCont>
-        <p>I am a checkbox, wo!</p>
+        <p>{filter.name}</p>
       </CheckboxCont>
     );
   }
