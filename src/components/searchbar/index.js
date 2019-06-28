@@ -10,7 +10,7 @@ export default class SearchBar extends React.Component {
     super(props);
     this.state = {
       keyword: "",
-      year: 0
+      year: null
     };
   }
 
@@ -28,20 +28,59 @@ export default class SearchBar extends React.Component {
 
   render() {
     return (
-      <div>
-        <input
-          type="text"
-          value={this.state.keyword}
-          onChange={e => this.onChangeHandlerKeyword(e)}
-          placeholder="Search for movies"
-        />
-        <input
-          type="number"
-          value={this.state.year}
-          onChange={e => this.onChangeHandlerYear(e)}
-          placeholder="Search by year"
-        />
-      </div>
+      <SearchWrapper>
+        <SearchBarItem>
+          <Icon src={SearchIcon} alt="Search" />
+          <Input
+            type="text"
+            value={this.state.keyword || ""}
+            onChange={e => this.onChangeHandlerKeyword(e)}
+            placeholder="Search for movies"
+          />
+        </SearchBarItem>
+        <SearchBarItem>
+          <Icon src={CalendarIcon} alt="Calendar" />
+          <Input
+            type="number"
+            value={this.state.year || ""}
+            onChange={e => this.onChangeHandlerYear(e)}
+            placeholder="Year of release"
+          />
+        </SearchBarItem>
+      </SearchWrapper>
     );
   }
 }
+
+const SearchWrapper = styled.div`
+  position: relative;
+  background-color: white;
+`;
+
+const SearchBarItem = styled.div`
+  margin: 15px;
+  background: white;
+  border: solid 2px ${colors.primaryColor};
+  border-style: none none solid none;
+`;
+
+const Input = styled.input`
+  color: ${colors.primaryColor};
+  font-weight: 800;
+  font-size: 1em;
+  padding: 0.6em;
+  border: none;
+  outline: none;
+
+  ::placeholder {
+    color: ${colors.primaryColor};
+    font-weight: 200;
+  }
+`;
+
+const Icon = styled.img`
+  position: relative;
+  display: inline-block;
+  margin-bottom: 0.3em;
+  vertical-align: middle;
+`;

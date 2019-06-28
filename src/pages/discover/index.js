@@ -69,7 +69,7 @@ export default class Discover extends React.Component {
       results,
       movieDetails
     } = this.state;
-    //Are you really using as state: year and keyword?
+    //Are you really using as state year and keyword?
 
     return (
       <DiscoverWrapper>
