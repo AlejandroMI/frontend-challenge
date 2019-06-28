@@ -45,7 +45,6 @@ export default class Discover extends React.Component {
     //Display popular movies when the app is launched
     const data = await fetcher.getPopularMovies();
     this.setState({ results: data.results, totalCount: data.total_results }); //{ ...this.state.results, results }
-    console.log("Discover: ComponentDidMount");
   }
 
   // Write a function to get the movie details based on the movie id taken from the URL.
