@@ -38,6 +38,11 @@ export default class Discover extends React.Component {
 
   // Write a function to preload the popular movies when page loads & get the movie genres
   async componentDidMount() {
+    //Fill our genre list with the most up to date information
+    const genresList = await fetcher.getGenresList();
+    this.setState({ genreOptions: genresList });
+
+    //Display popular movies when the app is launched
     const data = await fetcher.getPopularMovies();
     this.setState({ results: data.results, totalCount: data.total_results }); //{ ...this.state.results, results }
     console.log("Discover: ComponentDidMount");

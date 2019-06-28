@@ -33,3 +33,16 @@ export const getMoviesByKeyword = async (keyword, year) => {
     console.log("Error in:" + getMoviesByKeyword.name + "\n" + error);
   }
 };
+
+//Get genres and ids:
+export const getGenresList = async () => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/genre/movie/list?api_key=${keyAPI}`
+    );
+    console.log("Success in: " + getGenresList.name);
+    return response.data.genres;
+  } catch (error) {
+    console.log("Error in:" + getGenresList.name + "\n" + error);
+  }
+};

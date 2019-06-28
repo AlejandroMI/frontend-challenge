@@ -16,6 +16,7 @@ export default class SearchFilters extends React.Component {
         <SearchFiltersCont>
           <CategoryTitle>Movies</CategoryTitle>
           {/* Implement a component called "ExpandableFilters" and use it for the filter categories */}
+          {/* 3 EF components each of them receiving a different prop */}
           <ExpandableFilters />
         </SearchFiltersCont>
       </FiltersWrapper>
