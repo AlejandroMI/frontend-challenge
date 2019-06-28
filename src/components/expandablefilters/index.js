@@ -16,7 +16,6 @@ export default class ExpandableFilters extends React.Component {
 
   //Change state of component on click
   onClickHandler() {
-    console.log(this.state.filtersShown);
     this.setState(prevState => ({
       filtersShown: !prevState.filtersShown
     }));
