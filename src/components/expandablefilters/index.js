@@ -76,6 +76,7 @@ const ExpandableTitle = styled.div`
   display: inline-block;
   font-size: 1em;
   margin-left: 15px;
+  font-weight: bold;
 `;
 
 const ExpandableList = styled.div``;

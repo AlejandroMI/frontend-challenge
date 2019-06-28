@@ -58,6 +58,7 @@ const SearchWrapper = styled.div`
 `;
 
 const SearchBarItem = styled.div`
+  position: relative;
   margin: 15px;
   background: white;
   border: solid 2px ${colors.primaryColor};
@@ -65,6 +66,7 @@ const SearchBarItem = styled.div`
 `;
 
 const Input = styled.input`
+  display: inline-block;
   color: ${colors.primaryColor};
   font-weight: 800;
   font-size: 1em;
@@ -79,7 +81,6 @@ const Input = styled.input`
 `;
 
 const Icon = styled.img`
-  position: relative;
   display: inline-block;
   margin-bottom: 0.3em;
   vertical-align: middle;
