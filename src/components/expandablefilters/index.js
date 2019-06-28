@@ -12,5 +12,7 @@ export default class ExpandableFilters extends React.Component {
     };
   }
 
-  // You need to create your own checkbox component with a custom checkmark
+  render() {
+    return <p>I am the expandable component</p>;
+  }
 }

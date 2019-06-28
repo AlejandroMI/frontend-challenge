@@ -41,7 +41,7 @@ export default class SearchBar extends React.Component {
         <SearchBarItem>
           <Icon src={CalendarIcon} alt="Calendar" />
           <Input
-            type="number"
+            type="text"
             value={this.state.year || ""}
             onChange={e => this.onChangeHandlerYear(e)}
             placeholder="Year of release"
