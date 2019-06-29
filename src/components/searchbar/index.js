@@ -57,7 +57,7 @@ const SearchWrapper = styled.div`
 `;
 
 const SearchBarItem = styled.div`
-  margin: 15px;
+  margin-bottom: 15px;
   background: white;
   border: solid 2px ${colors.primaryColor};
   border-style: none none solid none;
@@ -80,6 +80,6 @@ const Input = styled.input`
 
 const Icon = styled.img`
   display: inline-block;
-  margin-bottom: 0.3em;
+  padding: 0.4em;
   vertical-align: middle;
 `;

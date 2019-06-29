@@ -9,7 +9,9 @@ export default class MovieItem extends React.Component {
       //The MovieItemWrapper must be linked to the movie details popup
       <MovieItemWrapper>
         <LeftCont>
-          <img src={`http://image.tmdb.org/t/p/w185${Movie.poster_path}`} />
+          <MoviePoster
+            src={`http://image.tmdb.org/t/p/w185${Movie.poster_path}`}
+          />
         </LeftCont>
         <RightCont>
           <MovieItemHeader>
@@ -34,13 +36,17 @@ const MovieItemWrapper = styled.div`
   padding: 20px;
 `;
 
-const LeftCont = styled.div``;
+const LeftCont = styled.div`
+  flex-shrink: 2;
+`;
+
+const MoviePoster = styled.img``;
 
 const RightCont = styled.div`
   display: flex;
+  flex-shirnk: 1;
   flex-direction: column;
   margin-left: 20px;
-  max-height: 278px;
   align-items: stretch;
 `;
 

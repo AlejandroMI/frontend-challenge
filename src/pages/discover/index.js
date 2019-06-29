@@ -124,5 +124,10 @@ const MovieFilters = styled.div`
 const MobilePageTitle = styled.header`
   flex-basis: 100%;
   order: 3;
-  text-aling: left;
+  font-size: 1.6em;
+  font-weight: bold;
+
+  @media (min-width: 768px) {
+    visibility: hidden;
+  }
 `;
