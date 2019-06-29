@@ -34,26 +34,33 @@ const MovieItemWrapper = styled.div`
   border-radius: 3px;
   margin-bottom: 15px;
   padding: 20px;
+  @media (max-width: 600px) {
+    font-size: 0.8em;
+  }
 `;
 
 const LeftCont = styled.div`
-  flex-shrink: 2;
+  flex-basis: auto;
+  min-width: 100px;
 `;
 
-const MoviePoster = styled.img``;
+const MoviePoster = styled.img`
+  max-width: 100%;
+`;
 
 const RightCont = styled.div`
-  display: flex;
-  flex-shirnk: 1;
-  flex-direction: column;
+  flex-basis: 100%;
+  flex-grow: 2;
   margin-left: 20px;
-  align-items: stretch;
+  min-witdh: 400px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const MovieItemHeader = styled.div`
   display: flex;
-  justify-content: space-between;
   margin-bottom: 10px;
+  justify-content: space-between;
 `;
 
 const MovieItemTitle = styled.div`
@@ -73,13 +80,16 @@ const MovieItemScore = styled.div`
 
 const MovieItemGenre = styled.div`
   color: ${colors.primaryColor};
+  font-size: 0.8em;
   font-weight: bold;
   margin-bottom: 20px;
 `;
 
 const MovieItemText = styled.div`
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  text-overflow: ellipsis;
+  max-height: 10vw;
 `;
 
 const MovieItemYear = styled.div`

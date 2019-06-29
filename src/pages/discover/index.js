@@ -98,12 +98,15 @@ export default class Discover extends React.Component {
 
 const DiscoverWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap-reverse;
-  padding: 60px 35px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 35px 35px;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const TotalCounter = styled.div`
-  position: relative;
   font-weight: 300;
   height: 20px;
   margin-bottom: 20px;

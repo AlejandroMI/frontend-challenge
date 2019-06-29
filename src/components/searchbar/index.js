@@ -38,7 +38,7 @@ export default class SearchBar extends React.Component {
             placeholder="Search for movies"
           />
         </SearchBarItem>
-        <SearchBarItem>
+        <SearchBarItem hideOnMobile>
           <Icon src={CalendarIcon} alt="Calendar" />
           <Input
             type="text"
@@ -52,15 +52,16 @@ export default class SearchBar extends React.Component {
   }
 }
 
-const SearchWrapper = styled.div`
-  background-color: white;
-`;
+const SearchWrapper = styled.div``;
 
 const SearchBarItem = styled.div`
   margin-bottom: 15px;
-  background: white;
   border: solid 2px ${colors.primaryColor};
   border-style: none none solid none;
+  @media (max-width: 768px) {
+    display: ${props => (props.hideOnMobile ? "none" : "")};
+    background-color: ${colors.lightBackground};
+  }
 `;
 
 const Input = styled.input`

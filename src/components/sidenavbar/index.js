@@ -7,8 +7,6 @@ import Arrow from "../../images/arrow-icon.png";
 import SearchWhite from "../../images/search-icon-white.png";
 
 export default class SideNavBar extends React.Component {
-  /* Write the necessary functions to show/hide the side bar on mobile devices */
-
   render() {
     const { activeSideBar } = this.props; //WAS: this.state;
 
@@ -77,6 +75,9 @@ const SideNavBarCont = styled.div`
   width: 280px;
   height: 100%;
   background-color: ${colors.sideNavBar};
+  @media (max-width: 768px) {
+    visibility: hidden;
+  }
 `;
 
 const SideNavMainLink = styled(Link)`
@@ -88,11 +89,7 @@ const SideNavMainLink = styled(Link)`
   color: white;
 `;
 
-const NavIcon = styled.img`
-  position: absolute;
-  right: 35px;
-  top: 40%;
-`;
+const NavIcon = styled.img``;
 
 const SideNavHeader = styled.div``;
 

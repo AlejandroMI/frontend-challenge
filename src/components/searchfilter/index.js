@@ -13,7 +13,7 @@ export default class SearchFilters extends React.Component {
         <SearchFiltersCont className="search_inputs_cont" marginBottom>
           <SearchBar searchMovies={searchMovies} />
         </SearchFiltersCont>
-        <SearchFiltersCont>
+        <SearchFiltersCont hideOnMobile>
           <CategoryTitle>Movies</CategoryTitle>
           {/* Implement a component called "ExpandableFilters" and use it for the filter categories */}
           {/* 3 EF components each of them receiving a different prop */}
@@ -33,6 +33,10 @@ const SearchFiltersCont = styled.div`
   padding: 20px;
   border-radius: 3px;
   transition: all 0.3s ease-in-out;
+  @media (max-width: 768px) {
+    display: ${props => (props.hideOnMobile ? "none" : "")};
+    padding: 0px;
+  }
 
   ${props =>
     props.marginBottom &&
@@ -45,3 +49,5 @@ const CategoryTitle = styled.div`
   margin-bottom: 15px;
   font-weight: 800;
 `;
+
+//${ props => (props.hideOnMobile ? "visibility: visible" : "") }
