@@ -26,7 +26,6 @@ export default class MovieItem extends React.Component {
 }
 
 const MovieItemWrapper = styled.div`
-  position: relative;
   display: flex;
   justify-content: flex-start;
   background-color: white;
@@ -46,19 +45,17 @@ const RightCont = styled.div`
 `;
 
 const MovieItemHeader = styled.div`
-  position: relative;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 `;
 
 const MovieItemTitle = styled.div`
-  displat: inline-block;
   font-size: 1.6em;
   font-weight: 800;
 `;
 
 const MovieItemScore = styled.div`
-  display: inline-block;
   background-color: ${colors.primaryColor};
   border-radius: 3px;
   color: white;
@@ -71,16 +68,16 @@ const MovieItemScore = styled.div`
 const MovieItemGenre = styled.div`
   color: ${colors.primaryColor};
   font-weight: bold;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 `;
 
 const MovieItemText = styled.div`
   overflow: hidden;
+  margin-bottom: 20px;
 `;
 
 const MovieItemYear = styled.div`
   margin-top: auto;
-  padding-top: 20px;
   color: ${colors.primaryColor};
   font-weight: 300;
 `;

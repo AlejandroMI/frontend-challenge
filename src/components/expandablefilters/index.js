@@ -29,39 +29,34 @@ export default class ExpandableFilters extends React.Component {
       //We return our filters chechbox
       return (
         <ExpandableWrapper>
-          <ExpandableSubWrapper onClick={this.onClickHandler}>
+          <ExpandableHeader onClick={this.onClickHandler}>
             <ExpandableIcon src={Minus} alt="Contract" />
             <ExpandableTitle>{title}</ExpandableTitle>
-          </ExpandableSubWrapper>
-          <ExpandableSubWrapper>
-            {filters.map(f => (
-              <div key={f.id}>{<Checkbox filter={f} />}</div>
-            ))}
-          </ExpandableSubWrapper>
+          </ExpandableHeader>
+          {filters.map(f => (
+            <div key={f.id}>{<Checkbox filter={f} onChange />}</div>
+          ))}
         </ExpandableWrapper>
       );
     } else {
       //Just show our title
       return (
         <ExpandableWrapper>
-          <ExpandableSubWrapper onClick={this.onClickHandler}>
+          <ExpandableHeader onClick={this.onClickHandler}>
             <ExpandableIcon src={Plus} alt="Expand" />
             <ExpandableTitle>{title}</ExpandableTitle>
-          </ExpandableSubWrapper>
+          </ExpandableHeader>
         </ExpandableWrapper>
       );
     }
   }
 }
 
-const ExpandableWrapper = styled.div`
-  position: relative;
-  cursor: pointer;
-`;
+const ExpandableWrapper = styled.div``;
 
-const ExpandableSubWrapper = styled.div`
-  position: relative;
-  padding: 5px;
+const ExpandableHeader = styled.div`
+  margin-bottom: 15px;
+  cursor: pointer;
 `;
 
 const ExpandableIcon = styled.img`

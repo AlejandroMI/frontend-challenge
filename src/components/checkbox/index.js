@@ -41,6 +41,7 @@ const CheckboxContainer = styled.div`
   vertical-align: middle;
   margin: 5px;
   font-weight: 300;
+  user-select: none;
 `;
 
 const Icon = styled.svg`
@@ -72,6 +73,7 @@ const StyledCheckbox = styled.div`
   border-radius: 3px;
   border: solid 1px ${colors.fontColor};
   transition: all 300ms;
+  cursor: pointer;
 
   :hover {
     background: #f5f5f5;

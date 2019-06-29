@@ -26,9 +26,7 @@ export default class SearchFilters extends React.Component {
   }
 }
 
-const FiltersWrapper = styled.div`
-  position: relative;
-`;
+const FiltersWrapper = styled.div``;
 
 const SearchFiltersCont = styled.div`
   background-color: white;
@@ -45,5 +43,5 @@ const SearchFiltersCont = styled.div`
 
 const CategoryTitle = styled.div`
   margin-bottom: 15px;
-  font-weight: bold;
+  font-weight: 800;
 `;

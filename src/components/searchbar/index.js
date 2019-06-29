@@ -53,12 +53,10 @@ export default class SearchBar extends React.Component {
 }
 
 const SearchWrapper = styled.div`
-  position: relative;
   background-color: white;
 `;
 
 const SearchBarItem = styled.div`
-  position: relative;
   margin: 15px;
   background: white;
   border: solid 2px ${colors.primaryColor};
