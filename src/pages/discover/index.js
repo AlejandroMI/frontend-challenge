@@ -99,9 +99,8 @@ export default class Discover extends React.Component {
 const DiscoverWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   padding: 35px 35px;
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
     flex-direction: column-reverse;
   }
 `;
@@ -113,24 +112,22 @@ const TotalCounter = styled.div`
 `;
 
 const MovieResults = styled.div`
-  flex: 2;
   order: 1;
+  flex-basis: 60%;
   margin-right: 15px;
 `;
 
 const MovieFilters = styled.div`
-  flex: 1;
   order: 2;
+  flex-basis: 40%;
   margin: 40px 0px 20px;
 `;
 
 const MobilePageTitle = styled.header`
-  flex-basis: 100%;
   order: 3;
   font-size: 1.6em;
   font-weight: bold;
-
-  @media (min-width: 768px) {
-    visibility: hidden;
+  @media (min-width: 769px) {
+    display: none;
   }
 `;
