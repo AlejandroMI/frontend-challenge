@@ -8,10 +8,10 @@ import SearchWhite from "../../images/search-icon-white.png";
 
 export default class SideNavBar extends React.Component {
   render() {
-    const { activeSideBar } = this.props; //WAS: this.state;
+    const { activeSideBar } = this.props;
 
     return (
-      <SideNavBarCont className={activeSideBar && "visible"}>
+      <SideNavBarCont activeSideBar={activeSideBar}>
         {/* Implement a hamburger icon slide in effect for mobile devices */}
         <SideNavMainLink
           className="menu_nav_link main_nav_link"
@@ -19,6 +19,7 @@ export default class SideNavBar extends React.Component {
           activeClassName="active"
           exact
         >
+          {/* <SideNavClose activeSideBar={activeSideBar} /> */}
           Wesley
           <NavIcon src={Arrow} alt="arrow" />
         </SideNavMainLink>
@@ -72,11 +73,13 @@ export default class SideNavBar extends React.Component {
 const SideNavBarCont = styled.div`
   position: fixed;
   z-index: 9;
+  overflow: hidden;
   width: 280px;
   height: 100%;
   background-color: ${colors.sideNavBar};
+  transition: all 0.3s ease-in-out;
   @media (max-width: 768px) {
-    visibility: hidden;
+    width: ${props => (props.activeSideBar ? "280px" : "0px")};
   }
 `;
 

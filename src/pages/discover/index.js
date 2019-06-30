@@ -73,11 +73,19 @@ export default class Discover extends React.Component {
       results,
       movieDetails
     } = this.state;
-    //Are you really using as state year and keyword?
+
+    const { openSideBar, closeSideBar } = this.props;
+
+    //Open sidebar handle
+    this.onClickHandler = e => {
+      openSideBar();
+    };
 
     return (
       <DiscoverWrapper>
-        <MobilePageTitle>Discover</MobilePageTitle>
+        <MobilePageTitle onClick={e => this.onClickHandler(e)}>
+          Discover
+        </MobilePageTitle>
         <MovieFilters>
           <SearchFilters
             genres={genreOptions}
@@ -114,7 +122,9 @@ const TotalCounter = styled.div`
 const MovieResults = styled.div`
   order: 1;
   flex-basis: 60%;
-  margin-right: 15px;
+  @media (min-width: 769px) {
+    margin-right: 15px;
+  }
 `;
 
 const MovieFilters = styled.div`
