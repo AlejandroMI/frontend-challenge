@@ -87,9 +87,15 @@ const MovieItemGenre = styled.div`
 
 const MovieItemText = styled.div`
   overflow: hidden;
+  display: block;
   margin-bottom: 5px;
   text-overflow: ellipsis;
   max-height: 10vw;
+  @media (max-width: 769px) {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
 `;
 
 const MovieItemYear = styled.div`
