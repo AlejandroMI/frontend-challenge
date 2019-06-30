@@ -84,7 +84,7 @@ export default class Discover extends React.Component {
     return (
       <DiscoverWrapper>
         <MobilePageTitle onClick={e => this.onClickHandler(e)}>
-          Discover
+          &#9776; &nbsp; Discover
         </MobilePageTitle>
         <MovieFilters>
           <SearchFilters
