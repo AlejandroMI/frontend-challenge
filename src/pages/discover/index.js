@@ -74,7 +74,7 @@ export default class Discover extends React.Component {
       movieDetails
     } = this.state;
 
-    const { openSideBar, closeSideBar } = this.props;
+    const { openSideBar } = this.props;
 
     //Open sidebar handle
     this.onClickHandler = e => {

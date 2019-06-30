@@ -19,7 +19,6 @@ export default class SideNavBar extends React.Component {
           activeClassName="active"
           exact
         >
-          {/* <SideNavClose activeSideBar={activeSideBar} /> */}
           Wesley
           <NavIcon src={Arrow} alt="arrow" />
         </SideNavMainLink>
@@ -29,7 +28,7 @@ export default class SideNavBar extends React.Component {
           activeClassName="active"
         >
           Discover
-          <NavIcon search />
+          <NavIcon src={SearchWhite} alt="search" />
         </SideNavMainLink>
         <SideNavHeader>
           <HeaderText>Watched</HeaderText>
@@ -46,7 +45,7 @@ export default class SideNavBar extends React.Component {
           to="/watched/tv-shows"
           activeClassName="active"
         >
-          Tv Shows
+          TV Shows
         </NavLink>
         <SideNavHeader>
           <HeaderText>Saved</HeaderText>
@@ -63,7 +62,7 @@ export default class SideNavBar extends React.Component {
           to="/saved/tv-shows"
           activeClassName="active"
         >
-          Tv Shows
+          TV Shows
         </NavLink>
       </SideNavBarCont>
     );
@@ -85,19 +84,37 @@ const SideNavBarCont = styled.div`
 
 const SideNavMainLink = styled(Link)`
   position: relative;
-  display: block;
+  display: flex;
+  background-color: ${props =>
+    props.exact ? colors.sideNavBar : colors.primaryColor};
   padding: 25px 35px;
   font-size: 1.6em;
   font-weight: 700;
   color: white;
 `;
 
-const NavIcon = styled.img``;
+const NavIcon = styled.img`
+  margin: auto 0 auto auto;
+`;
 
-const SideNavHeader = styled.div``;
+const SideNavHeader = styled.div`
+  position: relative;
+  color: white;
+  padding: 35px 15px 15px 0px;
+  margin-left: 35px;
+  border-bottom: solid 1px ${colors.lightBackground};
+`;
 
-const HeaderText = styled.div``;
+const HeaderText = styled.div`
+  display: block;
+  font-size: 1.6em;
+  font-weight: 600;
+`;
 
 const NavLink = styled(Link)`
   display: block;
+  font-size: 1em;
+  font-weight: 300;
+  color: white;
+  padding: 15px 35px;
 `;
