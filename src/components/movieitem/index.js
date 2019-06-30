@@ -4,23 +4,34 @@ import * as colors from "../../colors";
 
 export default class MovieItem extends React.Component {
   render() {
-    const Movie = this.props.movie;
+    const { movie, genres } = this.props;
+    console.log(genres);
     return (
       //The MovieItemWrapper must be linked to the movie details popup
       <MovieItemWrapper>
         <LeftCont>
           <MoviePoster
-            src={`http://image.tmdb.org/t/p/w185${Movie.poster_path}`}
+            src={`http://image.tmdb.org/t/p/w185${movie.poster_path}`}
           />
         </LeftCont>
         <RightCont>
           <MovieItemHeader>
-            <MovieItemTitle>{Movie.title}</MovieItemTitle>
-            <MovieItemScore>{Movie.vote_average}</MovieItemScore>
+            <MovieItemTitle>{movie.title}</MovieItemTitle>
+            <MovieItemScore>{movie.vote_average}</MovieItemScore>
           </MovieItemHeader>
-          <MovieItemGenre>Action | Comedy | Drama</MovieItemGenre>
-          <MovieItemText>{Movie.overview}</MovieItemText>
-          <MovieItemYear>{Movie.release_date}</MovieItemYear>
+
+          <MovieItemGenre>
+            {movie.genre_ids.map(g => (
+              <span key={g}>
+                {g == movie.genre_ids[0]
+                  ? genres.find(x => x.id == g).name
+                  : " | " + genres.find(x => x.id == g).name}
+              </span> //Fuck that was tough
+            ))}
+          </MovieItemGenre>
+
+          <MovieItemText>{movie.overview}</MovieItemText>
+          <MovieItemYear>{movie.release_date}</MovieItemYear>
         </RightCont>
       </MovieItemWrapper>
     );

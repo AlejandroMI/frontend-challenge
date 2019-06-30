@@ -10,7 +10,7 @@ export default class MovieList extends React.Component {
     return (
       <MoviesWrapper>
         {movies.map(m => (
-          <div key={m.id}>{<MovieItem movie={m} />}</div> //Defining the title as key for each movie
+          <div key={m.id}>{<MovieItem movie={m} genres={genres} />}</div> //Defining the title as key for each movie
         ))}
       </MoviesWrapper>
     );
