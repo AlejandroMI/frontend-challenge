@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/movie-finder/static/css/main.df26aff6.chunk.css",
+    "main.js": "/movie-finder/static/js/main.243f522d.chunk.js",
+    "main.js.map": "/movie-finder/static/js/main.243f522d.chunk.js.map",
+    "runtime~main.js": "/movie-finder/static/js/runtime~main.e473438c.js",
+    "runtime~main.js.map": "/movie-finder/static/js/runtime~main.e473438c.js.map",
+    "static/js/2.7abfc7f1.chunk.js": "/movie-finder/static/js/2.7abfc7f1.chunk.js",
+    "static/js/2.7abfc7f1.chunk.js.map": "/movie-finder/static/js/2.7abfc7f1.chunk.js.map",
+    "index.html": "/movie-finder/index.html",
+    "precache-manifest.4620a0203dbdb76bfaf410218d8bcb2a.js": "/movie-finder/precache-manifest.4620a0203dbdb76bfaf410218d8bcb2a.js",
+    "service-worker.js": "/movie-finder/service-worker.js",
+    "static/css/main.df26aff6.chunk.css.map": "/movie-finder/static/css/main.df26aff6.chunk.css.map",
+    "static/media/minus-symbol.svg": "/movie-finder/static/media/minus-symbol.69da28d9.svg",
+    "static/media/plus-symbol.svg": "/movie-finder/static/media/plus-symbol.be7401ca.svg"
+  }
+}
