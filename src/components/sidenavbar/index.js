@@ -19,7 +19,7 @@ export default class SideNavBar extends React.Component {
           activeClassName="active"
           exact
         >
-          Wesley
+          Alejandro
           <NavIcon src={Arrow} alt="arrow" />
         </SideNavMainLink>
         <SideNavMainLink
@@ -78,14 +78,14 @@ const SideNavBarCont = styled.div`
   background-color: ${colors.sideNavBar};
   transition: all 0.3s ease-in-out;
   @media (max-width: 768px) {
-    width: ${props => (props.activeSideBar ? "280px" : "0px")};
+    width: ${(props) => (props.activeSideBar ? "280px" : "0px")};
   }
 `;
 
 const SideNavMainLink = styled(Link)`
   position: relative;
   display: flex;
-  background-color: ${props =>
+  background-color: ${(props) =>
     props.exact ? colors.sideNavBar : colors.primaryColor};
   padding: 25px 35px;
   font-size: 1.6em;
